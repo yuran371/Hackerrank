@@ -3,26 +3,32 @@ import java.io.*;
 import java.util.*;
 
 public class Java10_Static_Initializer_Block {
-    static Scanner scn = new Scanner(System.in);
-    static int B = scn.nextInt();
-    static int H = scn.nextInt();
-    static int square;
-
-
-  static {
-      square = B*H;
-      }
-  
-    public static int getSquare () {
-        return square;
-    }
-
-
-    public static void main(String[] args) {
-        if (B>0&&H>0) {
-            System.out.println(getSquare());
-        } else {
-        	System.out.println("java.lang.Exception: Breadth and height must be positive");
-        }
-    }
+	  static {
+		  BufferedReader BF = new BufferedReader (new InputStreamReader (System.in));
+		  int B = 0;
+		  int H = 0;
+		  try {
+			  B=Integer.parseInt(BF.readLine().trim());
+			  H=Integer.parseInt(BF.readLine().trim());
+		  } catch (IOException e) {
+			  System.out.println(e.getMessage());			  
+		  } finally {
+			try {
+				BF.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}		 
+		  if (B<=0||H<=0) { 
+			  try {
+			  throw new Exception ("java.lang.Exception: ");
+			  } catch (Exception e) {
+			  System.out.println(e.getMessage() + "Breadth and height must be positive");
+		  }
+		  } else
+		  System.out.println(B*H);
+	  }
+	    public static void main(String[] args) {
+	}
 }
