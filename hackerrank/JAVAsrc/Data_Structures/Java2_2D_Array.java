@@ -46,6 +46,8 @@ public class Java2_2D_Array {
                    			 a2=array[i][j+1];	
                 		} System.out.println(a3=a1+a2);
                 	}
+                	
+                	
                 }
         	}
     	}
