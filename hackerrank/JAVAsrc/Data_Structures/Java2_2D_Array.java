@@ -40,25 +40,21 @@ public class Java2_2D_Array {
         KVADRAT_OUTTER: for (int k=0; k<=3; k++) {
         	
         	KVADRAT_INNER: for (int l=0; l<=3; l++) {
-        		a1=0;
         		
                 PIRAM_OUTTER: for (int i=k; i<=2; i++) {
           		  a1=array[i][l]+array[i][l+1]+array[i][l+2]+
         				  +array[i+1][l+1]+
         				  +array[i+2][l]+array[i+2][l+1]+array[i+2][l+2];
 
- 
-                		
-                	}
-            	a3=a1+a2;
-                if (sum<(a3)) {
-                	sum=(a3);
+                  sum = Math.max(sum, a1);
+//                  if (sum<a1) {
+//                  	sum=a1;
+//                	}
+
                 }
         	}
                 
         	}
         System.out.println(sum);   	
     	}
-
-
     }
