@@ -15,13 +15,7 @@ import static java.util.stream.Collectors.toList;
 public class Java2_2D_Array {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-
         List<List<Integer>> arr = new ArrayList<>();
-        Integer[][] array = new Integer[arr.size()][];
-        for (int i = 0; i < arr.size(); i++) {
-            List<Integer> row = arr.get(i);
-            array[i] = row.toArray(new Integer[row.size()]);
-        }
         IntStream.range(0, 6).forEach(i -> {
             try {
                 arr.add(
@@ -32,25 +26,39 @@ public class Java2_2D_Array {
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
-        });
-        KVADRAT_OUTTER: for (int k=0; k<4; k++) {
-        	KVADRAT_INNER: for (int l=0; l<4; l++) {
-                PIRAM_OUTTER: for (int i=0; i<3; i++) {
-                	PIRAM_INNER: for (int j=0; j<3; j++) {
-                		int a1=1;
-                		int a2=1;
-                		int a3=1;
-                		if (i==1||i==3) {
-                		  a1=array[i][j];
-                		} else {
-                   			 a2=array[i][j+1];	
-                		} System.out.println(a3=a1+a2);
+        });   
+        bufferedReader.close();
+        Integer[][] array = new Integer[arr.size()][];
+        for (int i = 0; i < arr.size(); i++) {
+            List<Integer> row = arr.get(i);
+            array[i] = row.toArray(new Integer[row.size()]);
+        }
+        int a1=0;
+		int a2=0;
+		int a3=0;
+		int sum=-11110;
+        KVADRAT_OUTTER: for (int k=0; k<=3; k++) {
+        	
+        	KVADRAT_INNER: for (int l=0; l<=3; l++) {
+        		a1=0;
+        		
+                PIRAM_OUTTER: for (int i=k; i<=2; i++) {
+          		  a1=array[i][l]+array[i][l+1]+array[i][l+2]+
+        				  +array[i+1][l+1]+
+        				  +array[i+2][l]+array[i+2][l+1]+array[i+2][l+2];
+
+ 
+                		
                 	}
-                	
-                	
+            	a3=a1+a2;
+                if (sum<(a3)) {
+                	sum=(a3);
                 }
         	}
+                
+        	}
+        System.out.println(sum);   	
     	}
-        bufferedReader.close();
+
+
     }
-}
