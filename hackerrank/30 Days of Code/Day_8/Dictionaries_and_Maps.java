@@ -1,4 +1,4 @@
-package Dazy_8;
+package Day_8;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -20,7 +20,7 @@ public class Dictionaries_and_Maps {
             String s = in.next();
             if (mapWithNumbers.get(s)==null) {
             	System.out.println("Not found");
-            } else System.out.println(mapWithNumbers.get(s)+"="+s);
+            } else System.out.println(s+"="+mapWithNumbers.get(s));
             
 //            for (Entry<String, Integer> ss:mapWithNumbers.entrySet()) { // Mojno cherez LinkeHashMap,
 //            	if (mapWithNumbers.containsKey(s)) {					 // no ne prohodit case v Hackerranke
