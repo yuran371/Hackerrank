@@ -50,8 +50,7 @@ class Student extends Inheritance{
 			return 'D';
 		} else	if (40>sum) {
 			return 'T';
-		} else	return Character.MIN_VALUE;
-		
+		} else	return Character.MIN_VALUE;		
 	}
 	private int[] testScores;
 
