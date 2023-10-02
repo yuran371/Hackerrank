@@ -17,14 +17,23 @@ class Difference {
       void computeDifference() {
     	  int dif = 0;
           for (int i=0; i<elements.length; i++) {
-        	  int j=0;
-        	  while (j<=elements.length) {
-        	  dif=elements[i]-elements[j];
+        	  for (int j=i+1; j<elements.length; j++) {
+        	  int min = 0;
+        	  int max = 0;
+        	  if (Math.abs(elements[i])>Math.abs(elements[j])) {
+                  max = Math.abs(elements[i]);
+                  min = Math.abs(elements[j]);
+              } else {
+                  max = Math.abs(elements[j]);
+                  min = Math.abs(elements[i]);
+        	  }
+        	  if ((max-min)>dif) {
+        		  dif = (max-min);
+        	  }
         	  }
           }
+          maximumDifference = dif;
       }
-
-
 }
 
 public class Scope {
