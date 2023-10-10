@@ -2,7 +2,7 @@ package Day_15;
 
 import java.util.Scanner;
 
-// Лучшее объяснение работы LinkedList, а в частности вложенного класса Node
+// Лучшее объяснение работы LinkedList, а в частности вложенного класса Node https://www.freecodecamp.org/news/how-linked-lists-work/
 public class Linked_List {
 	int data;
 	Linked_List next;
