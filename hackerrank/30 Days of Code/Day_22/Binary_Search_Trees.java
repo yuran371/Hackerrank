@@ -12,8 +12,13 @@ class Node{
 }
 public class Binary_Search_Trees {
 	public static int getHeight(Node root){
-      //Write your code here
-    }
+		 if(root == null) {
+			 return -1;
+			 }
+		 else {
+			 return 1+Math.max(getHeight(root.left),getHeight(root.right));
+			 }
+		}
     public static Node insert(Node root,int data){
         if(root==null){
             return new Node(data);
@@ -40,6 +45,6 @@ public class Binary_Search_Trees {
             root=insert(root,data);
         }
         int height=getHeight(root);
-        System.out.println(height);
+        System.out.println(height);		// Как он печатает длину
     }
 }
