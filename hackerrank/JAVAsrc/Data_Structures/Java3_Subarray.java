@@ -1,6 +1,6 @@
 package Data_Structures;
 import java.util.Scanner;
-public class Java3_Sybarray {
+public class Java3_Subarray {
 	public static void main(String[] args) {
 //		Summa sm = new Summa();
 
