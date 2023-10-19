@@ -47,6 +47,28 @@ class Student1 implements Comparable<Student1>{
 	}
 }
 
+class SortByAllParameters implements Comparator<Student1> {
+	@Override
+	public int compare(Student1 s1, Student1 s2) {
+		if (s1.getCgpa()==s2.getCgpa()) {
+			if (s1.getFname().equals(s2.getFname())) {
+				if (s1.getId()>s2.getId()) {
+					return -1;
+				} else if (s1.getId()<s2.getId()) {
+					return 1;
+				} else {
+					return 0;
+				}
+			} else {
+				return s1.getFname().compareTo(s2.getFname());
+			}
+		} else if (s1.getCgpa()>s2.getCgpa()) {
+			return -1;
+		} else {
+			return 1;
+		}
+	}
+}
 
 public class Java11_Sort {
 	public static void main(String[] args){
@@ -64,7 +86,8 @@ public class Java11_Sort {
 			testCases--;
 		}
 		
-		Collections.sort(studentList); //realization sort due to implementing comparable by class Student 
+		Collections.sort(studentList); //realization sort due to implementing comparable<> by class Student 
+		Collections.sort(studentList, new SortByAllParameters()); //realization sort due to implementing new class SortByAllParameters which implement Comparator<> 
 		
 		for(Student1 st: studentList){
 			System.out.println(st.getFname());
