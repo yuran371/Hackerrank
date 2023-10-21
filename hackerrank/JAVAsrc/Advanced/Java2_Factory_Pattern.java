@@ -21,11 +21,10 @@ interface Food {
 	
 	class FoodFactory {
 		public Food getFood(String order) {
-			Pizza p;
-			Cake c;
+			Food f;
 			switch (order) {
-			case "pizza": return p = new Pizza();
-			case "cake": return c = new Cake();
+			case "pizza": return f = new Pizza();
+			case "cake": return f = new Cake();
 			default: return null;
 			}
 		}
