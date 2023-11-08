@@ -1,6 +1,6 @@
-package Data_Structures;
+package dataStructures;
 import java.util.Scanner;
-public class Java3_Subarray {
+public class SubarrayTask {
 	public static void main(String[] args) {
 //		Summa sm = new Summa();
 

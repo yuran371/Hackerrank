@@ -1,4 +1,4 @@
-package Data_Structures;
+package dataStructures;
 
 import java.io.*;
 import java.math.*;
@@ -12,7 +12,7 @@ import java.util.stream.*;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
-public class Java2_2D_Array {
+public class N2DArray {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         List<List<Integer>> arr = new ArrayList<>();

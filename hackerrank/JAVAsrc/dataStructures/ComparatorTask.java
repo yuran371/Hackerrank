@@ -1,4 +1,4 @@
-package Data_Structures;
+package dataStructures;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -27,7 +27,7 @@ class Player{
         this.score = score;
     }
 }
-public class Java5_Comparator {
+public class ComparatorTask {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();

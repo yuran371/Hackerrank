@@ -1,4 +1,4 @@
-package Data_Structures;
+package dataStructures;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Java4_List {
+public class ListTask {
 
     public static void main(String[] args) throws IOException {
         List<Integer> L = new ArrayList<Integer>(); 

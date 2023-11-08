@@ -1,4 +1,4 @@
-package Data_Structures;
+package dataStructures;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -78,7 +78,7 @@ class Priorities {
 	
 
 
-public class Java7_Priority_Queue {
+public class PriorityQueueTask {
     private final static Scanner scan = new Scanner(System.in);
     private final static Priorities priorities = new Priorities();
     

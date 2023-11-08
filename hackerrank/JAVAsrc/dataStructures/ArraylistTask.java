@@ -1,11 +1,11 @@
-package Data_Structures;
+package dataStructures;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
-public class Java8_Arraylist {
+public class ArraylistTask {
 
 	public static void main(String[] args) {
 		List<List<Integer>> listOutter = new ArrayList<>();

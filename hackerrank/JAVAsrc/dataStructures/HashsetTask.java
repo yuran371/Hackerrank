@@ -1,9 +1,9 @@
-package Data_Structures;
+package dataStructures;
 
 import java.util.HashSet;
 import java.util.Scanner;
 
-public class Java6_Hashset {
+public class HashsetTask {
 	 public static void main(String[] args) {
 	        Scanner s = new Scanner(System.in);
 	        int t = s.nextInt();

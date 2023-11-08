@@ -1,4 +1,4 @@
-package Data_Structures;
+package dataStructures;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -70,7 +70,7 @@ class SortByAllParameters implements Comparator<Student1> {
 	}
 }
 
-public class Java11_Sort {
+public class SortTask {
 	public static void main(String[] args){
 		Scanner in = new Scanner(System.in);
 		int testCases = Integer.parseInt(in.nextLine());

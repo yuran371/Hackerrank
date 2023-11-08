@@ -1,10 +1,10 @@
-package Data_Structures;
+package dataStructures;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Java9_Map {
+public class MapTask {
 	public static void main(String[] args) {
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		try (Scanner sc = new Scanner(System.in)) {
