@@ -1,4 +1,4 @@
-package Object_Oriented_Programming;
+package objectOrientedProgramming;
 import java.util.*;
 
 interface AdvancedArithmetic{
@@ -15,7 +15,7 @@ class MyCalculator implements AdvancedArithmetic {
 		return sum;  		
 	}
 }
-public class Java1_Interface {
+public class InterfaceTask {
     public static void main(String []args){
         MyCalculator my_calculator = new MyCalculator();
         System.out.print("I implemented: ");

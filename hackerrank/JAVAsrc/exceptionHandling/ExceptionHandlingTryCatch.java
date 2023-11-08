@@ -1,8 +1,8 @@
-package Exception_Handling;
+package exceptionHandling;
 
 import java.util.Scanner;
 
-public class Java1_Exception_Handling___Try_catch {
+public class ExceptionHandlingTryCatch {
     public static void main(String[] args) {
     	Scanner scan = new Scanner(System.in);
 

@@ -1,4 +1,4 @@
-package Exception_Handling;
+package exceptionHandling;
 
 import java.util.Scanner;
 class MyCalculator {
@@ -18,7 +18,7 @@ class MyCalculator {
 	}
 }
 
-public class Java2_Exception_Handling {
+public class ExceptionHandling {
     public static final MyCalculator my_calculator = new MyCalculator();
     public static final Scanner in = new Scanner(System.in);
     

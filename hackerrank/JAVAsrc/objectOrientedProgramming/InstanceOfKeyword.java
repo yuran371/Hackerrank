@@ -1,4 +1,4 @@
-package Object_Oriented_Programming;
+package objectOrientedProgramming;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -7,7 +7,7 @@ class Student{}
 class Rockstar{   }
 class Hacker{}
 
-public class Java2_Instanceof_keyword {
+public class InstanceOfKeyword {
 	
 	   static String count(ArrayList mylist){
 	      int a = 0,b = 0,c = 0;

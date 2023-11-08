@@ -1,6 +1,6 @@
-package Object_Oriented_Programming;
+package objectOrientedProgramming;
 import java.util.*;
-public class Java3_Iterator {
+public class IteratorTask {
 	
 	   static Iterator func(ArrayList mylist){
 	      Iterator it=mylist.iterator();
