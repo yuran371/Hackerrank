@@ -4,7 +4,7 @@ import java.util.*;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
-public class BigDecimal {
+public class BigDecimalTask {
     public static void main(String []args){
         //Input
         Scanner sc= new Scanner(System.in);
@@ -20,16 +20,16 @@ public class BigDecimal {
 
         
         boolean sorted = false;
-        BigDecimal [] arrBD = new BigDecimal[n];
+        BigDecimalTask [] arrBD = new BigDecimalTask[n];
         for (int i=0; i<arrBD.length; i++) {
-        	arrBD[i]=new BigDecimal(s[i]);
+        	arrBD[i]=new BigDecimalTask(s[i]);
         }
         
         while (!sorted) {
         	sorted = true;
             for (int i=0; i<n-1; i++) {
 	            if (arrBD[i].compareTo(arrBD[i+1])==-1) {
-	            	BigDecimal BD3=arrBD[i];
+	            	BigDecimalTask BD3=arrBD[i];
 	            	arrBD[i]=arrBD[i+1];
 	            	arrBD[i+1]=BD3;
  
