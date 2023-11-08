@@ -1,8 +1,8 @@
-package Introduction;
+package introduction;
 import java.io.*;
 import java.util.*;
 
-public class Java10_Static_Initializer_Block {
+public class StaticInitializerBlock {
 	  static {
 		  BufferedReader BF = new BufferedReader (new InputStreamReader (System.in));
 		  int B = 0;

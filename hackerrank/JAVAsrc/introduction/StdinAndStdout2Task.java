@@ -1,6 +1,6 @@
-package Introduction;
+package introduction;
 import java.util.Scanner;
-public class Java4_Stdin_and_Stdout_2 {
+public class StdinAndStdout2Task {
 	public static void main(String[] args) {
 		{
 	        Scanner scan = new Scanner(System.in);

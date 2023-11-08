@@ -1,11 +1,11 @@
-package Introduction;
+package introduction;
 import java.io.*;
 import java.util.*;
 import java.text.*;
 import java.math.*;
 import java.util.regex.*;
 
-public class Java9_End_of_file {
+public class EndOfFile {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
         int i=1;        

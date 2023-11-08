@@ -1,4 +1,4 @@
-package Introduction;
+package introduction;
 import java.io.*;
 import java.util.*;
 import java.io.BufferedReader;
@@ -8,7 +8,7 @@ import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Currency;
 
-public class Java13_Currency_Formatter {
+public class CurrencyFormatter {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader BR = new BufferedReader(new InputStreamReader(System.in));

@@ -1,7 +1,7 @@
-package Introduction;
+package introduction;
 import java.util.*;
 import java.io.*;
-public class Java8_Datatypes {
+public class DatatypesTask {
 	public static void main(String []argh)
     {
 

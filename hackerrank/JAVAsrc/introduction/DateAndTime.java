@@ -1,4 +1,4 @@
-package Introduction;
+package introduction;
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -36,7 +36,7 @@ class Result {
 }
    
 
-public class Java12_Date_and_Time {
+public class DateAndTime {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 

@@ -1,7 +1,7 @@
-package Introduction;
+package introduction;
 import java.util.*;
 import java.io.*;
-public class Java7_Loops_2 {
+public class Loops2Task {
 	public static void main(String []argh){
         Scanner in = new Scanner(System.in);
         int t=in.nextInt();

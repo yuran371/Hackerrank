@@ -1,4 +1,4 @@
-package Introduction;
+package introduction;
 	import java.io.*;
 	import java.math.*;
 	import java.security.*;
@@ -9,7 +9,7 @@ package Introduction;
 
 
 
-	public class Java6_Loops_1 {
+	public class Loops1Task {
 	    public static void main(String[] args) throws IOException {
 	        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
