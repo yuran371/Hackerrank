@@ -1,4 +1,4 @@
-package Advanced;
+package advanced;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -68,7 +68,7 @@ interface PerformOperation {
 	    }
 }
 	
-public class Java3_Lambda_Expressions {
+public class Lambda_Expressions {
 	public static void main(String[] args) throws IOException {
 		  MyMath ob = new MyMath();
 		  BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

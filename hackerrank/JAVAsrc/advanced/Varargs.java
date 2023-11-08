@@ -1,4 +1,4 @@
-package Advanced;
+package advanced;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -19,7 +19,7 @@ class Add {
     }
 }
 
-public class Java1_Varargs {
+public class Varargs {
 	public static void main(String[] args) {
 	       try{
 				BufferedReader br=new BufferedReader(new InputStreamReader(System.in));

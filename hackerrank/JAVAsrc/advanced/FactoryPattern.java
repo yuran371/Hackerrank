@@ -1,4 +1,4 @@
-package Advanced;
+package advanced;
 
 import java.security.Permission;
 import java.util.Scanner;
@@ -29,7 +29,7 @@ interface Food {
 			}
 		}
 	}
-public class Java2_Factory_Pattern {
+public class FactoryPattern {
 	 public static void main(String args[]){
 			Scanner sc=new Scanner(System.in);
 			//creating the factory
