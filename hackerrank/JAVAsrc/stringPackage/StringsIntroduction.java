@@ -1,10 +1,10 @@
-package String;
+package stringPackage;
 import java.util.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Java1_Strings_Introduction {
+public class StringsIntroduction {
     public static void main(String[] args) throws IOException {
         BufferedReader BF = new BufferedReader(new InputStreamReader(System.in));
         String A = BF.readLine().trim();

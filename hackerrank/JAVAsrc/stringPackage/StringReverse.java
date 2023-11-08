@@ -1,11 +1,11 @@
-package String;
+package stringPackage;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
-public class Java4_String_Reverse {
+public class StringReverse {
 
 	
     public static void main (String[] args) throws IOException {

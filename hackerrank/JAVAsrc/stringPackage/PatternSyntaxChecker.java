@@ -1,10 +1,10 @@
-package String;
+package stringPackage;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
-public class Java11_Pattern_Syntax_Checker {
+public class PatternSyntaxChecker {
 	public static void main(String[] args){
 		Scanner in = new Scanner(System.in);
 		int testCases = Integer.parseInt(in.nextLine());

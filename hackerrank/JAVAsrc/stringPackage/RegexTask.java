@@ -1,10 +1,10 @@
-package String;
+package stringPackage;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Java7_Regex {
+public class RegexTask {
 
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);

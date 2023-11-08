@@ -1,4 +1,4 @@
-package String;
+package stringPackage;
 import java.util.Scanner;
 class UsernameValidator {
     /*
@@ -10,7 +10,7 @@ class UsernameValidator {
 }
 
 
-public class Java9_Valid_Username_Regular_Expression {
+public class ValidUsernameRegularExpression {
     private static final Scanner scan = new Scanner(System.in);
     
     public static void main(String[] args) {

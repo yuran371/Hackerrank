@@ -1,9 +1,9 @@
-package String;
+package stringPackage;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Java5_Anagrams {
+public class AnagramsTask {
     static boolean isAnagram(String a, String b) {
     	String aa=a.toLowerCase();
         char [] aaa = aa.toCharArray();

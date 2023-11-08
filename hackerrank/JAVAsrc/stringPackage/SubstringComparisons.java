@@ -1,10 +1,10 @@
-package String;
+package stringPackage;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Java3_Substring_Comparisons {
+public class SubstringComparisons {
 
 	public static String getSmallestAndLargest(String s, int k) {
         String smallest = s.substring(0, k);

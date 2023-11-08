@@ -1,10 +1,10 @@
-package String;
+package stringPackage;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Java8_Regex_2_Duplicate_Words {
+public class RegexDuplicateWords {
 
     public static void main(String[] args) {
 
