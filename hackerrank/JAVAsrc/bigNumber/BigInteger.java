@@ -1,11 +1,11 @@
-package BigNumber;
+package bigNumber;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.math.BigInteger;
 
-public class Java2_BigInteger {
+public class BigInteger {
     public static void main(String[] args) throws IOException {
     	BufferedReader BF = new BufferedReader(new InputStreamReader(System.in));
     	String n = BF.readLine();

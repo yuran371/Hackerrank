@@ -1,10 +1,10 @@
-package BigNumber;
+package bigNumber;
 
 import java.util.*;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
-public class Java3_BigDecimal {
+public class BigDecimal {
     public static void main(String []args){
         //Input
         Scanner sc= new Scanner(System.in);
