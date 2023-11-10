@@ -40,7 +40,7 @@ public class ComparatorTask {
         }
         scan.close();
 
-        Arrays.sort(player, checker);
+        ArraysTask.sort(player, checker);
         for(int i = 0; i < player.length; i++){
             System.out.printf("%s %s\n", player[i].name, player[i].score);
         }
