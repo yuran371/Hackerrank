@@ -1,8 +1,8 @@
- package Day_0;
+ package day_0;
 
 import java.util.Scanner;
 
-public class Hello_World {
+public class HelloWorld {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in); 
 		String inputString = scan.nextLine(); 

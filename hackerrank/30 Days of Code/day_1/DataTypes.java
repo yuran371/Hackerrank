@@ -1,8 +1,8 @@
-package Day_1;
+package day_1;
 
 import java.util.Scanner;
 
-public class Data_Types {
+public class DataTypes {
     public static void main(String[] args) {
         int i = 4;
         double d = 4.0;

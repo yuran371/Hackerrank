@@ -1,4 +1,4 @@
-package Day_13;
+package day_13;
 
 import java.util.Scanner;
 
@@ -33,7 +33,7 @@ class MyBook extends Book {
 	
 }
 
-public class Abstract_Classes {
+public class AbstractClasses {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String title = scanner.nextLine();

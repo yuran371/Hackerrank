@@ -1,25 +1,25 @@
-package Day_15;
+package day_15;
 
 import java.util.Scanner;
 
 // Лучшее объяснение работы LinkedList, а в частности вложенного класса Node https://www.freecodecamp.org/news/how-linked-lists-work/
-public class Linked_List {
+public class LinkedListTask {
 	int data;
-	Linked_List next;
+	LinkedListTask next;
 	
-	Linked_List(int d) {
+	LinkedListTask(int d) {
         data = d;
         next = null;
     }
 }
 class Solution {
 
-    public static  Linked_List insert(Linked_List head,int data) {
-    	Linked_List node = new Linked_List(data);
+    public static  LinkedListTask insert(LinkedListTask head,int data) {
+    	LinkedListTask node = new LinkedListTask(data);
     	if(head == null) {
             head = node;
         } else {
-           Linked_List nodeNext = head;	//т.к. мы не можем обратиться к элементу (как в массиве) мы пробегаемся по списку, начиная с head
+           LinkedListTask nodeNext = head;	//т.к. мы не можем обратиться к элементу (как в массиве) мы пробегаемся по списку, начиная с head
            while(nodeNext.next != null) {
                nodeNext = nodeNext.next;
            }
@@ -30,8 +30,8 @@ class Solution {
         //Complete this method
     }
 
-	public static void display(Linked_List head) {
-        Linked_List start = head;
+	public static void display(LinkedListTask head) {
+        LinkedListTask start = head;
         while(start != null) {
             System.out.print(start.data + " ");
             start = start.next;
@@ -40,7 +40,7 @@ class Solution {
 
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
-        Linked_List head = null;
+        LinkedListTask head = null;
         int N = sc.nextInt();
 
         while(N-- > 0) {
