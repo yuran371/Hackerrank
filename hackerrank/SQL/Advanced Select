@@ -1,0 +1,122 @@
+	//Advanced Select//
+	----------------
+	1. Type of Triangle.  /* 
+							Write a query identifying the type of each record in the TRIANGLES table 
+							using its three side lengths. Output one of the following statements for 
+							each record in the table:
+								-Equilateral: It's a triangle with  sides of equal length.
+								-Isosceles: It's a triangle with  sides of equal length.
+								-Scalene: It's a triangle with  sides of differing lengths.
+								-Not A Triangle: The given values of A, B, and C don't form a triangle.
+						  */	
+SELECT 
+    CASE 
+        WHEN A+B<=C OR A+C<=B OR B+C<=A THEN 'Not A Triangle'
+        WHEN A=B AND B=C AND A=C THEN 'Equilateral'
+        WHEN A=B OR A=C OR C=B THEN 'Isosceles'
+        WHEN A!=B AND B!=C AND A!=C THEN 'Scalene'
+    END
+FROM TRIANGLES 
+-------------------------------------------------
+
+	2. The PADS.  /*
+					Generate the following two result sets:
+						1. Query an alphabetically ordered list of all names in OCCUPATIONS, 
+						immediately followed by the first letter of each profession as a 
+						parenthetical (i.e.: enclosed in parentheses). For example: 
+						AnActorName(A), ADoctorName(D), AProfessorName(P), and ASingerName(S).
+						2. Query the number of ocurrences of each occupation in OCCUPATIONS. 
+						Sort the occurrences in ascending order, and output them in the following 
+						format:
+							-There are a total of [occupation_count] [occupation]s.
+						where [occupation_count] is the number of occurrences of an occupation in 
+						OCCUPATIONS and [occupation] is the lowercase occupation name. If more 
+						than one Occupation has the same [occupation_count], they should be 
+						ordered alphabetically.
+				  */
+SELECT CONCAT(Name, '(', (regexp_substr(Occupation, "^.{1}")), ')') 
+FROM OCCUPATIONS 
+ORDER BY Name;
+SELECT CONCAT('There are a total of ', count(Occupation), ' ', lower(Occupation), 's.') 
+FROM OCCUPATIONS 
+GROUP BY Occupation 
+ORDER BY count(Occupation) ASC;
+-------------------------------------------------
+
+	3. Occupations.  /* 
+						Pivot the Occupation column in OCCUPATIONS so that each Name is 
+						sorted alphabetically and displayed underneath its corresponding 
+						Occupation. The output column headers should be Doctor, Professor, 
+						Singer, and Actor, respectively.
+					 */
+-- SET @D=0, @P=0, @S=0, @A=0;
+-- SELECT      CASE WHEN Occupation='Doctor' THEN @D:=@D+1 
+--             WHEN Occupation='Professor' THEN @P:=@P+1 
+--             WHEN Occupation='Singer' THEN @S:=@S+1 
+--             WHEN Occupation='Actor' THEN @A:=@A+1 END AS id, 
+--             MIN(CASE WHEN Occupation='Doctor' THEN Name END),
+--        MIN(CASE WHEN Occupation='Professor' THEN Name END),
+--        MIN(CASE WHEN Occupation='Singer' THEN Name END),
+--        MIN(CASE WHEN Occupation='Actor' THEN Name END)
+-- FROM OCCUPATIONS 
+-- GROUP BY id
+-- ORDER BY Name;
+
+SET @D=0, @P=0, @S=0, @A=0;
+WITH idTable
+AS (SELECT CASE WHEN Occupation='Doctor' THEN @D:=@D+1 
+    WHEN Occupation='Professor' THEN @P:=@P+1 
+    WHEN Occupation='Singer' THEN @S:=@S+1 
+    WHEN Occupation='Actor' THEN @A:=@A+1 END AS id, 
+    CASE WHEN Occupation='Doctor' THEN Name END AS Doc,
+    CASE WHEN Occupation='Professor' THEN Name END AS Prof,
+    CASE WHEN Occupation='Singer' THEN Name END AS Sin,
+    CASE WHEN Occupation='Actor' THEN Name END AS Act
+FROM OCCUPATIONS 
+ORDER BY Name)
+SELECT min(Doc), min(Prof), min(Sin), min(Act)
+FROM idTable
+GROUP BY id;
+
+-- WITH idTable
+-- AS (SELECT row_number() OVER (partition by occupation ORDER BY Name) as id, 
+--     CASE WHEN Occupation='Doctor' THEN Name END AS Doc,
+--     CASE WHEN Occupation='Professor' THEN Name END AS Prof,
+--     CASE WHEN Occupation='Singer' THEN Name END AS Sin,
+--     CASE WHEN Occupation='Actor' THEN Name END AS Act
+-- FROM OCCUPATIONS 
+-- )
+-- SELECT min(Doc), min(Prof), min(Sin), min(Act)
+-- FROM idTable
+-- GROUP BY id;
+-------------------------------------------------
+ 
+ 	4. Binary Tree Nodes.  /*
+ 						You are given a table, BST, containing two columns: 
+ 						N and P, where N represents the value of a node in Binary 
+ 						Tree, and P is the parent of N.
+ 					  */
+SELECT
+    CASE WHEN P IS NULL THEN CONCAT(N,' Root')
+         WHEN N= SOME (SELECT DISTINCT P FROM BST) THEN CONCAT(N,' Inner')
+    ELSE CONCAT(N,' Leaf')
+END 
+FROM BST 
+ORDER BY N
+-------------------------------------------------
+ 
+ 	5. New Companies.  /*
+						  Given the table schemas below, write a query to print the 
+						  company_code, founder name, total number of lead managers, 
+						  total number of senior managers, total number of managers, 
+						  and total number of employees. Order your output by ascending company_code.
+					   */
+SELECT C.company_code, C.founder, 
+        (SELECT COUNT(DISTINCT company_code) FROM Lead_Manager LM WHERE LM.company_code=C.company_code),
+        (SELECT COUNT(DISTINCT senior_manager_code) FROM Senior_Manager SM WHERE SM.company_code=C.company_code),
+        (SELECT COUNT(DISTINCT manager_code) FROM Manager M WHERE M.company_code=C.company_code),
+        (SELECT COUNT(DISTINCT employee_code ) FROM Employee E WHERE E.company_code=C.company_code)
+FROM Company C
+ORDER BY C.company_code
+-------------------------------------------------
+ 
