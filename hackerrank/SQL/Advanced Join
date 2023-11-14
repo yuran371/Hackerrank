@@ -1,0 +1,33 @@
+	//Advanced Join//
+	----------------
+	1. SQL Project Planning.  /* 
+								You are given a table, Projects, containing three columns: 
+								Task_ID, Start_Date and End_Date. It is guaranteed that the 
+								difference between the End_Date and the Start_Date is equal 
+								to 1 day for each row in the table.
+							  */	
+WITH cte_1 AS 
+(SELECT Start_Date, ROW_NUMBER() OVER (ORDER BY Start_Date) AS row_n 
+ FROM Projects
+ WHERE Start_Date NOT IN (SELECT End_Date FROM Projects)
+ ORDER BY Start_Date),
+cte_2 AS
+(SELECT End_Date, ROW_NUMBER() OVER (ORDER BY End_Date) AS row_n
+ FROM Projects
+ WHERE End_Date NOT IN (SELECT Start_Date FROM Projects)
+ ORDER BY End_Date)
+SELECT cte_1.Start_Date, cte_2.End_Date 
+FROM cte_1
+JOIN cte_2 USING(row_n)
+ORDER BY End_Date-Start_Date ASC, Start_Date;
+
+-- SELECT Start_Date, ROW_NUMBER() OVER (ORDER BY Start_Date)  
+--  FROM Projects
+--  WHERE Start_Date NOT IN (SELECT End_Date FROM (SELECT End_Date FROM Projects AS pr1 WHERE Start_Date<>End_Date) AS sel1) 
+--  ORDER BY Start_Date;
+ 
+--  SELECT End_Date, ROW_NUMBER() OVER (ORDER BY End_Date) 
+--  FROM Projects
+--  WHERE End_Date NOT IN (SELECT Start_Date FROM (SELECT Start_Date FROM Projects AS pr1 WHERE Start_Date<>End_Date) AS sel1) 
+--  ORDER BY End_Date
+-------------------------------------------------
