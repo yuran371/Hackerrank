@@ -119,3 +119,45 @@ HAVING sum1 > 0
 ORDER BY sum1 DESC, h.hacker_id ASC;
 -------------------------------------------------
  
+ 	8. Challenges.   /*
+					   Julia asked her students to create some coding challenges. 
+					   Write a query to print the hacker_id, name, and the total 
+					   number of challenges created by each student. Sort your 
+					   results by the total number of challenges in descending 
+					   order. If more than one student created the same number of 
+					   challenges, then sort the result by hacker_id. If more than 
+					   one student created the same number of challenges and the 
+					   count is less than the maximum number of challenges created, 
+					   then exclude those students from the result.					    	  
+					 */  Условия: Если пара одинаковых, то =max значению
+					 			  Если не пара, то просто печатаем
+WITH cte AS 
+(
+    SELECT COUNT(c.challenge_id) AS coun
+           FROM Challenges c
+           GROUP BY c.hacker_id
+           ORDER BY coun DESC
+),
+cte1 AS 
+(
+    SELECT MAX(cte.coun) AS max_cte1
+    FROM cte
+ ),
+ cte2 AS
+ (
+     SELECT cte.coun AS coun_cte2
+     FROM cte
+     GROUP BY cte.coun
+     HAVING COUNT(cte.coun)=1
+ )
+SELECT h.hacker_id, h.name, COUNT(c.challenge_id) AS coun_main
+FROM Hackers h 
+JOIN Challenges c
+USING (hacker_id)
+GROUP BY h.hacker_id, h.name
+HAVING
+coun_main IN (SELECT cte2.coun_cte2 FROM cte2)
+OR
+coun_main = (SELECT cte1.max_cte1 FROM cte1)
+ORDER BY coun_main DESC, h.hacker_id ASC;
+ 
