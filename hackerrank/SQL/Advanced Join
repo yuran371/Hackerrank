@@ -30,4 +30,21 @@ ORDER BY End_Date-Start_Date ASC, Start_Date;
 --  FROM Projects
 --  WHERE End_Date NOT IN (SELECT Start_Date FROM (SELECT Start_Date FROM Projects AS pr1 WHERE Start_Date<>End_Date) AS sel1) 
 --  ORDER BY End_Date
--------------------------------------------------
+	----------------
+	2. Placements.  /* 
+						You are given three tables: Students, Friends and Packages. 
+						Students contains two columns: ID and Name. Friends contains 
+						two columns: ID and Friend_ID (ID of the ONLY best friend). 
+						Packages contains two columns: ID and Salary (offered salary 
+						in $ thousands per month).
+					*/	
+SELECT s.Name 
+FROM Students s
+JOIN Friends f
+USING (ID)
+JOIN Packages p1
+ON p1.ID=f.ID
+JOIN Packages p2
+ON p2.ID=f.Friend_ID
+WHERE p1.Salary<p2.Salary
+ORDER BY p2.Salary
