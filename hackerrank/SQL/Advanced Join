@@ -48,3 +48,28 @@ JOIN Packages p2
 ON p2.ID=f.Friend_ID
 WHERE p1.Salary<p2.Salary
 ORDER BY p2.Salary
+	----------------
+	3. Placements.  /* 
+						Two pairs (X1, Y1) and (X2, Y2) are said to be symmetric pairs if X1 = Y2 
+						and X2 = Y1. Write a query to output all such symmetric pairs in ascending 
+						order by the value of X. List the rows such that X1 ≤ Y1
+					*/	
+WITH cte AS
+(
+    SELECT X, Y, ROW_NUMBER() OVER (ORDER BY X, Y) AS ID
+    FROM Functions f
+)
+-- ,
+-- cte_Y AS 
+-- (
+--     SELECT X, Y, ROW_NUMBER() OVER (ORDER BY X, Y) AS ID
+--     FROM Functions f
+-- )
+SELECT DISTINCT cte1.X, cte1.Y
+FROM cte AS cte1
+JOIN cte AS cte2 ON cte1.X = cte2.Y AND cte1.Y = cte2.X 
+WHERE
+cte1.ID != cte2.ID
+AND
+cte1.X <= cte1.Y
+ORDER BY cte1.X, cte1.Y
